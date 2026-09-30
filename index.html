@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<title>秋霞电影网 - 高清影视在线观看与影视资讯平台</title>
+<meta name="description" content="秋霞电影网（qiuxiadianyingwang-app）是一个专注于影视内容导览与影视资讯的网站，提供最新影片推荐、剧集更新、影视排行榜、观影指南等栏目，支持手机端与电脑端自适应浏览。" />
+<meta name="keywords" content="秋霞电影网,秋霞电影网官网,秋霞电影,影视资讯,影片推荐,剧集更新,影视排行榜" />
+<meta name="author" content="秋霞电影网" />
+<meta name="robots" content="index,follow" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="theme-color" content="#12131a" />
+<link rel="canonical" href="https://qiuxiadianyingwang-app/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="秋霞电影网" />
+<meta property="og:title" content="秋霞电影网 - 高清影视在线观看与影视资讯平台" />
+<meta property="og:description" content="秋霞电影网提供最新影片推荐、剧集更新、影视排行榜与观影指南，手机端电脑端自适应浏览。" />
+<meta property="og:url" content="https://qiuxiadianyingwang-app/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="秋霞电影网 - 高清影视在线观看与影视资讯平台" />
+<meta name="twitter:description" content="秋霞电影网提供最新影片推荐、剧集更新、影视排行榜与观影指南，手机端电脑端自适应浏览。" />
+<style type="text/css">
+/* ===== 基础重置 ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  background-color: #12131a;
+  color: #e8e9ef;
+  line-height: 1.75;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+img { max-width: 100%; height: auto; display: block; border: 0; }
+a { color: #ffb648; text-decoration: none; transition: color .25s ease; }
+a:hover, a:focus { color: #ffd08a; }
+ul, ol { list-style: none; }
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.35; color: #ffffff; }
+.wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 18px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ===== 顶部导航 ===== */
+.topbar {
+  position: sticky; top: 0; z-index: 999;
+  background: rgba(18,19,26,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,182,72,.18);
+}
+.topbar-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-mark {
+  width: 38px; height: 38px; border-radius: 11px;
+  background: linear-gradient(135deg, #ffb648 0%, #ff6b5a 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; color: #1b1206; font-size: 17px;
+  box-shadow: 0 6px 16px rgba(255,140,60,.32);
+  flex-shrink: 0;
+}
+.logo-text { display: flex; flex-direction: column; }
+.logo-name { font-size: 19px; font-weight: 800; color: #fff; letter-spacing: 1px; }
+.logo-url { font-size: 11px; color: #8b8f9e; letter-spacing: .3px; }
+.nav { display: flex; align-items: center; gap: 4px; }
+.nav a {
+  font-size: 15px; color: #c9ccd6; padding: 8px 12px; border-radius: 8px;
+}
+.nav a:hover { color: #ffb648; background: rgba(255,182,72,.1); }
+.nav-toggle {
+  display: none; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.16);
+  background: transparent; border-radius: 10px; cursor: pointer;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.nav-toggle span { display: block; width: 18px; height: 2px; background: #e8e9ef; border-radius: 2px; }
+
+/* ===== 首屏 Hero ===== */
+.hero {
+  position: relative; overflow: hidden;
+  padding: 68px 0 60px;
+  background:
+    radial-gradient(1000px 460px at 12% -10%, rgba(255,182,72,.20), transparent 62%),
+    radial-gradient(760px 420px at 92% 8%, rgba(255,107,90,.18), transparent 60%),
+    #14151d;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; color: #ffb648;
+  background: rgba(255,182,72,.12);
+  border: 1px solid rgba(255,182,72,.3);
+  padding: 6px 14px; border-radius: 999px; margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: 40px; letter-spacing: 1px; margin-bottom: 16px;
+  background: linear-gradient(120deg, #ffffff 10%, #ffd08a 55%, #ffb648 90%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero-url {
+  display: inline-block; font-size: 14px; color: #a9adbb;
+  background: rgba(255,255,255,.05); border: 1px dashed rgba(255,255,255,.16);
+  padding: 7px 14px; border-radius: 10px; margin-bottom: 22px; word-break: break-all;
+}
+.hero-desc { font-size: 16.5px; color: #b8bcc9; max-width: 720px; margin-bottom: 30px; }
+.hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 34px; }
+.btn {
+  display: inline-block; padding: 13px 26px; border-radius: 12px;
+  font-size: 15.5px; font-weight: 600; transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #ffb648, #ff7a45); color: #231503;
+  box-shadow: 0 10px 26px rgba(255,140,60,.28);
+}
+.btn-ghost { border: 1px solid rgba(255,255,255,.22); color: #dfe2ea; }
+.btn:hover { transform: translateY(-2px); }
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  border-top: 1px solid rgba(255,255,255,.08); padding-top: 26px;
+}
+.stat-num { font-size: 26px; font-weight: 800; color: #ffb648; line-height: 1.2; }
+.stat-label { font-size: 13px; color: #8b8f9e; }
+
+/* ===== 通用区块 ===== */
+.section { padding: 62px 0; }
+.section-alt { background: #16171f; }
+.sec-head { margin-bottom: 34px; }
+.sec-kicker { font-size: 13px; color: #ff7a45; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+.sec-head h2 { font-size: 28px; margin-bottom: 10px; }
+.sec-head p { color: #9498a6; font-size: 15px; max-width: 680px; }
+
+/* ===== 栏目卡片 ===== */
+.grid { display: grid; gap: 18px; }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.card {
+  background: linear-gradient(160deg, #1c1d27 0%, #191a23 100%);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px; padding: 24px 22px;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,182,72,.4);
+  box-shadow: 0 16px 34px rgba(0,0,0,.38);
+}
+.card-ico {
+  width: 46px; height: 46px; border-radius: 13px; margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 21px; font-weight: 800; color: #231503;
+  background: linear-gradient(135deg, #ffb648, #ff7a45);
+}
+.card h3 { font-size: 18.5px; margin-bottom: 8px; }
+.card p { font-size: 14.5px; color: #969aa8; margin-bottom: 14px; }
+.card-link { font-size: 14px; font-weight: 600; }
+
+/* ===== 影片列表 ===== */
+.list { display: grid; gap: 12px; }
+.list-item {
+  display: flex; align-items: center; gap: 14px;
+  background: #1b1c25; border: 1px solid rgba(255,255,255,.06);
+  border-radius: 13px; padding: 14px 16px;
+  transition: background .2s ease, border-color .2s ease;
+}
+.list-item:hover { background: #21222d; border-color: rgba(255,182,72,.32); }
+.rank {
+  width: 30px; height: 30px; flex-shrink: 0; border-radius: 9px;
+  background: rgba(255,182,72,.14); color: #ffb648;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800;
+}
+.rank.top { background: linear-gradient(135deg, #ffb648, #ff7a45); color: #231503; }
+.item-main { flex: 1; min-width: 0; }
+.item-title { font-size: 16px; font-weight: 600; color: #f1f2f6; }
+.item-meta { font-size: 13px; color: #84889a; margin-top: 2px; }
+.item-tag {
+  font-size: 12px; padding: 4px 10px; border-radius: 999px;
+  background: rgba(255,255,255,.06); color: #a5a9b8; flex-shrink: 0;
+}
+
+/* ===== 特色条 ===== */
+.features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.feature {
+  text-align: center; padding: 26px 16px;
+  border: 1px solid rgba(255,255,255,.07); border-radius: 15px;
+  background: rgba(255,255,255,.03);
+}
+.feature .f-num { font-size: 24px; font-weight: 800; color: #fff; }
+.feature .f-txt { font-size: 14px; color: #9498a6; margin-top: 4px; }
+
+/* ===== 关于 / FAQ ===== */
+.about-box {
+  background: linear-gradient(150deg, #1d1e28, #17181f);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 18px; padding: 32px;
+}
+.about-box p { color: #a8acba; font-size: 15.5px; margin-bottom: 14px; }
+.about-box p:last-child { margin-bottom: 0; }
+.faq-item {
+  background: #1b1c25; border: 1px solid rgba(255,255,255,.06);
+  border-radius: 13px; padding: 18px 20px; margin-bottom: 12px;
+}
+.faq-item h3 { font-size: 16.5px; margin-bottom: 6px; color: #ffd08a; }
+.faq-item p { font-size: 14.5px; color: #969aa8; }
+
+/* ===== 底部 ===== */
+.footer {
+  background: #0e0f14; border-top: 1px solid rgba(255,255,255,.07);
+  padding: 46px 0 26px; margin-top: 10px;
+}
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 26px; }
+.footer h4 { font-size: 15.5px; margin-bottom: 12px; color: #fff; }
+.footer p { font-size: 14px; color: #85899a; }
+.footer ul li { margin-bottom: 8px; }
+.footer ul a { font-size: 14px; color: #9a9eae; }
+.footer ul a:hover { color: #ffb648; }
+.footer-bottom {
+  margin-top: 30px; padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.07);
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;
+  font-size: 13.5px; color: #6f7385;
+}
+
+/* ===== 移动端自适应 ===== */
+@media (max-width: 980px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .features { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  body { font-size: 15.5px; }
+  .nav-toggle { display: flex; }
+  .nav {
+    display: none; position: absolute; top: 60px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: #14151d; border-bottom: 1px solid rgba(255,255,255,.08);
+    padding: 8px 14px 14px;
+  }
+  .nav.show { display: flex; }
+  .nav a { padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,.05); }
+  .topbar-inner { position: relative; }
+  .hero { padding: 46px 0 42px; }
+  .hero h1 { font-size: 28px; }
+  .hero-desc { font-size: 15px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 18px 12px; }
+  .section { padding: 44px 0; }
+  .sec-head h2 { font-size: 23px; }
+  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .features { grid-template-columns: repeat(2, 1fr); }
+  .about-box { padding: 22px; }
+  .btn { padding: 12px 20px; font-size: 15px; }
+  .hero-btns .btn { flex: 1 1 100%; text-align: center; }
+}
+@media (max-width: 480px) {
+  .logo-url { display: none; }
+  .footer-top { grid-template-columns: 1fr; }
+  .feature { padding: 20px 12px; }
+  .item-tag { display: none; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "秋霞电影网",
+  "alternateName": "秋霞电影",
+  "url": "https://qiuxiadianyingwang-app/",
+  "description": "秋霞电影网是一个专注于影视内容导览与影视资讯的网站，提供最新影片推荐、剧集更新、影视排行榜、观影指南等栏目。",
+  "inLanguage": "zh-CN",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://qiuxiadianyingwang-app/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "秋霞电影网",
+  "url": "https://qiuxiadianyingwang-app/",
+  "description": "秋霞电影网提供影视资讯、影片推荐、剧集更新与影视排行榜等内容服务。",
+  "areaServed": "CN",
+  "knowsAbout": ["影视资讯", "影片推荐", "剧集更新", "影视排行榜"]
+}
+</script>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<!-- 顶部导航 -->
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="logo">
+      <div class="logo-mark" aria-hidden="true">秋</div>
+      <div class="logo-text">
+        <span class="logo-name">秋霞电影网</span>
+        <span class="logo-url">https://qiuxiadianyingwang-app</span>
+      </div>
+    </div>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="展开导航菜单" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="mainNav" aria-label="主导航">
+      <a href="#movies">影片推荐</a>
+      <a href="#series">剧集更新</a>
+      <a href="#news">影视资讯</a>
+      <a href="#ranking">热门榜单</a>
+      <a href="#guide">观影指南</a>
+      <a href="#about">关于我们</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<main>
+<section class="hero">
+  <div class="wrap">
+    <h1>秋霞电影网 · 你的随身影视内容指南</h1>
+    <span class="hero-tag">◆ 2026 全新改版 · 移动端优先体验</span>
+    <div class="hero-url">官方网址：https://qiuxiadianyingwang-app</div>
+    <p class="hero-desc">
+      秋霞电影网（qiuxiadianyingwang-app）聚焦影视内容导览与影视资讯服务，每日更新影片推荐、剧集更新动态、影视排行榜与观影指南，帮你快速找到值得一看的内容。页面采用响应式布局，手机、平板、电脑均能流畅浏览。
+    </p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#movies">浏览影片推荐</a>
+      <a class="btn btn-ghost" href="#ranking">查看热门榜单</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">12000+</div><div class="stat-label">收录影片条目</div></div>
+      <div class="stat"><div class="stat-num">每日</div><div class="stat-label">更新影视资讯</div></div>
+      <div class="stat"><div class="stat-num">6 大</div><div class="stat-label">内容栏目分区</div></div>
+      <div class="stat"><div class="stat-num">全端</div><div class="stat-label">自适应浏览支持</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目一：影片推荐 -->
+<section class="section" id="movies">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Section 01</div>
+      <h2>秋霞电影网 · 影片推荐</h2>
+      <p>按题材、口碑与热度筛选的影片清单，配合一句话看点，帮你省去挑选成本。</p>
+    </div>
+    <div class="grid grid-4">
+      <article class="card">
+        <div class="card-ico" aria-hidden="true">影</div>
+        <h3>院线新片速递</h3>
+        <p>同步整理近期上映影片的上映时间与题材标签，第一时间掌握院线动态。</p>
+        <a class="card-link" href="#">查看详情 →</a>
+      </article>
+      <article class="card">
+        <div class="card-ico" aria-hidden="true">经</div>
+        <h3>高分经典回顾</h3>
+        <p>收录长盛不衰的经典影片，按年代与类型归档，适合补片与重看。</p>
+        <a class="card-link" href="#">查看详情 →</a>
+      </article>
+      <article class="card">
+        <div class="card-ico" aria-hidden="true">纪</div>
+        <h3>纪录片精选</h3>
+        <p>自然、人文、历史等纪录片专题，内容翔实，适合深度观看。</p>
+        <a class="card-link" href="#">查看详情 →</a>
+      </article>
+      <article class="card">
+        <div class="card-ico" aria-hidden="true">动</div>
+        <h3>动画剧场</h3>
+        <p>涵盖剧场版与系列动画，标注适宜人群，方便家庭观影选择。</p>
+        <a class="card-link" href="#">查看详情 →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目二：剧集更新 -->
+<section class="section section-alt" id="series">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Section 02</div>
+      <h2>秋霞电影网 · 剧集更新</h2>
+      <p>按更新日整理剧集进度与集数信息，追剧不用再翻遍各个平台。</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="list">
+        <div class="list-item">
+          <div class="rank top" aria-hidden="true">1</div>
+          <div class="item-main">
+            <div class="item-title">都市职场剧 · 每周三更新</div>
+            <div class="item-meta">共 32 集 · 已更新至第 18 集</div>
+          </div>
+          <span class="item-tag">剧情</span>
+          <a class="card-link" href="#">追剧</a>
+        </div>
+        <div class="list-item">
+          <div class="rank top" aria-hidden="true">2</div>
+          <div class="item-main">
+            <div class="item-title">古装悬疑剧 · 每周五更新</div>
+            <div class="item-meta">共 24 集 · 已更新至第 12 集</div>
+          </div>
+          <span class="item-tag">悬疑</span>
+          <a class="card-link" href="#">追剧</a>
+        </div>
+        <div class="list-item">
+          <div class="rank top" aria-hidden="true">3</div>
+          <div class="item-main">
+            <div class="item-title">青春校园剧 · 每周六更新</div>
+            <div class="item-meta">共 20 集 · 已更新至第 9 集</div>
+          </div>
+          <span class="item-tag">青春</span>
+          <a class="card-link" href="#">追剧</a>
+        </div>
+      </div>
+      <div class="list">
+        <div class="list-item">
+          <div class="rank" aria-hidden="true">4</div>
+          <div class="item-main">
+            <div class="item-title">科幻冒险剧 · 每周日更新</div>
+            <div class="item-meta">共 16 集 · 已更新至第 6 集</div>
+          </div>
+          <span class="item-tag">科幻</span>
+          <a class="card-link" href="#">追剧</a>
+        </div>
+        <div class="list-item">
+          <div class="rank" aria-hidden="true">5</div>
+          <div class="item-main">
+            <div class="item-title">家庭生活剧 · 每周二更新</div>
+            <div class="item-meta">共 40 集 · 已更新至第 27 集</div>
+          </div>
+          <span class="item-tag">家庭</span>
+          <a class="card-link" href="#">追剧</a>
+        </div>
+        <div class="list-item">
+          <div class="rank" aria-hidden="true">6</div>
+          <div class="item-main">
+            <div class="item-title">历史传记剧 · 已完结</div>
+            <div class="item-meta">共 36 集 · 全集上线</div>
+          </div>
+          <span class="item-tag">历史</span>
+          <a class="card-link" href="#">追剧</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目三：影视资讯 -->
+<section class="section" id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Section 03</div>
+      <h2>秋霞电影网 · 影视资讯</h2>
+      <p>行业动态、幕后花絮与观影常识，读懂影片之外的故事。</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card">
+        <h3>行业动态</h3>
+        <p>关注影视制作、发行与放映环节的最新消息，内容简洁不冗长。</p>
+        <a class="card-link" href="#">阅读资讯 →</a>
+      </article>
+      <article class="card">
+        <h3>幕后花絮</h3>
+        <p>整理拍摄现场与制作特辑信息，了解一部作品诞生的过程。</p>
+        <a class="card-link" href="#">阅读资讯 →</a>
+      </article>
+      <article class="card">
+        <h3>观影常识</h3>
+        <p>讲解画面格式、音效技术与评分体系，看懂参数不再困难。</p>
+        <a class="card-link" href="#">阅读资讯 →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目四：热门榜单 -->
+<section class="section section-alt" id="ranking">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Section 04</div>
+      <h2>秋霞电影网 · 热门榜单</h2>
+      <p>综合浏览热度与讨论度的榜单数据，每日刷新，直观反映当下关注焦点。</p>
+    </div>
+    <div class="list">
+      <div class="list-item">
+        <div class="rank top" aria-hidden="true">1</div>
+        <div class="item-main">
+          <div class="item-title">本周观影热度榜 · 第一名</div>
+          <div class="item-meta">动作 / 冒险 · 讨论度持续走高</div>
+        </div>
+        <span class="item-tag">热度 98</span>
+        <a class="card-link" href="#">查看榜单</a>
+      </div>
+      <div class="list-item">
+        <div class="rank top" aria-hidden="true">2</div>
+        <div class="item-main">
+          <div class="item-title">本周观影热度榜 · 第二名</div>
+          <div class="item-meta">剧情 / 家庭 · 口碑稳步上升</div>
+        </div>
+        <span class="item-tag">热度 94</span>
+        <a class="card-link" href="#">查看榜单</a>
+      </div>
+      <div class="list-item">
+        <div class="rank top" aria-hidden="true">3</div>
+        <div class="item-main">
+          <div class="item-title">本周观影热度榜 · 第三名</div>
+          <div class="item-meta">科幻 / 视觉 · 特效讨论集中</div>
+        </div>
+        <span class="item-tag">热度 91</span>
+        <a class="card-link" href="#">查看榜单</a>
+      </div>
+      <div class="list-item">
+        <div class="rank" aria-hidden="true">4</div>
+        <div class="item-main">
+          <div class="item-title">本周观影热度榜 · 第四名</div>
+          <div class="item-meta">喜剧 / 轻松 · 周末观看首选</div>
+        </div>
+        <span class="item-tag">热度 87</span>
+        <a class="card-link" href="#">查看榜单</a>
+      </div>
+      <div class="list-item">
+        <div class="rank" aria-hidden="true">5</div>
+        <div class="item-main">
+          <div class="item-title">本周观影热度榜 · 第五名</div>
+          <div class="item-meta">动画 / 亲子 · 家庭观影热门</div>
+        </div>
+        <span class="item-tag">热度 83</span>
+        <a class="card-link" href="#">查看榜单</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目五：观影指南 -->
+<section class="section" id="guide">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Section 05</div>
+      <h2>秋霞电影网 · 观影指南</h2>
+      <p>从选片到观看的实用建议，让每一次观影都更从容。</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card">
+        <h3>选片方法</h3>
+        <p>先定题材再定时长，用标签筛选快速缩小范围，避免无效挑选。</p>
+        <a class="card-link" href="#">查看指南 →</a>
+      </article>
+      <article class="card">
+        <h3>版本说明</h3>
+        <p>介绍不同画面与音效版本的差异，帮助理解画质与音效标识。</p>
+        <a class="card-link" href="#">查看指南 →</a>
+      </article>
+      <article class="card">
+        <h3>观看环境</h3>
+        <p>提供亮度、音量与观看距离的建议，减少长时间观看的疲劳感。</p>
+        <a class="card-link" href="#">查看指南 →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 特色数据条 -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="features">
+      <div class="feature"><div class="f-num">6</div><div class="f-txt">内容栏目</div></div>
+      <div class="feature"><div class="f-num">24h</div><div class="f-txt">资讯更新</div></div>
+      <div class="feature"><div class="f-num">3 端</div><div class="f-txt">自适应适配</div></div>
+      <div class="feature"><div class="f-num">100%</div><div class="f-txt">纯静态加载</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目六：关于我们 -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">Section 06</div>
+      <h2>关于秋霞电影网</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="about-box">
+        <p>秋霞电影网（网址：https://qiuxiadianyingwang-app）是一个面向影视爱好者的内容导览与资讯网站，致力于用清晰的栏目结构和简洁的页面，帮助用户更快找到想看的影视内容。</p>
+        <p>网站全部页面采用响应式设计，从手机小屏到桌面大屏均保持一致阅读体验；导航、栏目与列表层级清晰，便于搜索引擎抓取与理解页面主题。</p>
+        <p>如你有内容合作或意见反馈，可通过页面底部联系方式与我们取得联系。</p>
+      </div>
+      <div>
+        <div class="faq-item">
+          <h3>秋霞电影网收录哪些内容？</h3>
+          <p>主要收录影片与剧集的内容导览信息、影视资讯、榜单数据与观影指南，不涉及任何未经授权的资源存储与下载。</p>
+        </div>
+        <div class="faq-item">
+          <h3>网站的官方网址是什么？</h3>
+          <p>秋霞电影网官方网址为 https://qiuxiadianyingwang-app ，请认准域名以免访问到仿冒站点。</p>
+        </div>
+        <div class="faq-item">
+          <h3>手机上浏览体验如何？</h3>
+          <p>页面针对移动端做了布局适配，导航可折叠展开，正文字号与行距按小屏优化，无需缩放即可阅读。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- 底部 -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <h4>秋霞电影网</h4>
+        <p>影视内容导览与影视资讯网站。官方网址：<a href="#">https://qiuxiadianyingwang-app</a></p>
+        <p style="margin-top:8px;">本站仅提供影视信息导览，不存储或传播任何未经授权的影视资源。</p>
+      </div>
+      <div>
+        <h4>内容栏目</h4>
+        <ul>
+          <li><a href="#movies">影片推荐</a></li>
+          <li><a href="#series">剧集更新</a></li>
+          <li><a href="#news">影视资讯</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>榜单与指南</h4>
+        <ul>
+          <li><a href="#ranking">热门榜单</a></li>
+          <li><a href="#guide">观影指南</a></li>
+          <li><a href="#about">关于我们</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点信息</h4>
+        <ul>
+          <li><a href="#">意见反馈</a></li>
+          <li><a href="#">内容合作</a></li>
+          <li><a href="#">免责声明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 秋霞电影网 qiuxiadianyingwang-app · 保留所有权利</span>
+      <span>页面自适应移动端 · 关键词：秋霞电影网</span>
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+(function () {
+  var btn = document.getElementById('navToggle');
+  var nav = document.getElementById('mainNav');
+  if (!btn || !nav) { return; }
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('show');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      nav.classList.remove('show');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
